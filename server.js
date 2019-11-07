@@ -6,10 +6,15 @@ const passport = require('passport');
 const users = require('./routes/api/users');
 
 const app = express();
+
+require('dotenv').config()
+
+
 const port = process.env.PORT || 5000;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
 
 const db = require("./config/keys").mongoURI;
 mongoose.connect(db, { useNewUrlParser: true }).then(() => console.log("MongoDB connected")).catch((err) => console.log(err));

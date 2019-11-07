@@ -8,6 +8,7 @@ import store from './store';
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
+
 // import logo from "./logo.svg";
 
 
@@ -59,6 +60,7 @@ class App extends Component {
             </Provider>
         );
     }
+
 }
 
 export default App;
