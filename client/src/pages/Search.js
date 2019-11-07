@@ -3,6 +3,8 @@ import Jumbotron from "../components/Jumbotron";
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import SearchForm from "../components/SearchForm/index";
+import SimpleMap from "../utils/Map"
+
 
 
 
@@ -19,6 +21,8 @@ class Search extends Component {
                   <h3>Coming soon...</h3>
                 </Jumbotron>
                 <SearchForm />
+                <SimpleMap />
+
                 </Col>
         </Row>
       </Container>
