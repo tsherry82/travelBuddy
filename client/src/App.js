@@ -1,56 +1,66 @@
-import React, { } from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Navbar from "./components/Navbar/index";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import jwt_decode from 'jwt-decode';
+import setAuthToken from './utils/setAuthToken';
+import { setCurrentUser, logoutUser } from './actions/authActions';
+import { Provider } from 'react-redux';
+import store from './store';
 import Home from "./pages/Home";
-import Wrapper from "./components/Wrapper";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
-import Login from "./pages/Login";
+
+// import logo from "./logo.svg";
 
 
+import './App.css';
 
+import Navbar from './components/layout/Navbar';
+import Landing from './components/layout/Landing';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
+import PrivateRoute from './components/private-route/PrivateRoute';
+import Dashboard from './components/dashboard/Dashboard';
 
+if(localStorage.jwtToken){
+    const token = localStorage.jwtToken;
+    setAuthToken(token);
 
-function App() {
-  return (
-    <Router>
-     
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to Travel Buddy</h2>
-          <Navbar />
-        </div>
-      </div>
-      <div>
-        <Wrapper>
-          <Route exact path="/"/>
-          <Route path="/home" component={Home} />
-          <Route path="/search" component={Search} />
-          <Route path="/profile" component={Profile} />
-          <Route path="/login" component={Login} />
-        </Wrapper>
-      </div>
+    const decoded = jwt_decode(token);
+    store.dispatch(setCurrentUser(decoded));
 
-    </Router>
-  );
+    const currentTime = Date.now() / 1000;
+    if(decoded.exp < currentTime){
+        store.dispatch(logoutUser());
+        window.location.href = "./login";
+    }
 }
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <div className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <h2>Welcome to React</h2>
-//         </div>
-//         <p className="App-intro">
-//           To get started, edit <code>src/App.js</code> and save to reload.
-//         </p>
-//       </div>
-//     );
-//   }
-// }
+
+class App extends Component {
+    render() {
+        return(
+            <Provider store={store}>
+                <Router>
+                <div className="App">
+                    <div className="App-header">
+                        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+                        {/* <h2>Welcome to Travel Buddy</h2> */}
+                        <Navbar />
+                        </div>
+                        <Route path="/" component={Home} />
+                        <Route exact path="/Landing" component={Landing} />
+                        <Route exact path="/register" component={Register} />
+                        <Route exact path="/login" component={Login} />
+                        <Route path="/search" component={Search} />
+                        <Route path="/profile" component={Profile} />
+                        <Switch>
+                            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                        </Switch>
+                    </div>
+                </Router>
+            </Provider>
+        );
+    }
+
+}
 
 export default App;

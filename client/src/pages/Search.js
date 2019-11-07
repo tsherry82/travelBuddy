@@ -9,6 +9,7 @@ import SimpleMap from "../utils/Map"
 
 
 
+
 class Search extends Component {
     render() {
         return (
@@ -21,6 +22,7 @@ class Search extends Component {
                 </Jumbotron>
                 <SearchForm />
                 <SimpleMap />
+
                 </Col>
         </Row>
       </Container>
