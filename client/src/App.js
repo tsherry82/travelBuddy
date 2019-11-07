@@ -8,7 +8,6 @@ import Wrapper from "./components/Wrapper";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
-import Map from "./utils/Map"
 
 
 

@@ -2,6 +2,8 @@ const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+require('dotenv').config()
+
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mondogb://pokemon:pikachu151@ds125871/heroku_0xn0jnk7");
