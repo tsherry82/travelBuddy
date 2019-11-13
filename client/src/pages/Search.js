@@ -8,6 +8,7 @@ import SimpleMap from "../utils/Map";
 
 class Search extends Component {
 
+
   render() {
     console.log("loaded") 
     return (

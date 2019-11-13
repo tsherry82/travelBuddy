@@ -9,13 +9,12 @@ import { Col, Row, Container } from "../components/Grid";
 
 class Profile extends Component {
     render() {
-      
         return (
           <Container fluid>
             <Row>
               <Col size="md-6">
                 <Jumbotron className="home">
-                  <h3>Profile</h3>
+                  <h1>Feed</h1>
                   <h3>Coming soon...</h3>
                 </Jumbotron>
                 </Col>

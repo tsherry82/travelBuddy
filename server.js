@@ -7,7 +7,7 @@ const users = require('./routes/api/users');
 
 const app = express();
 
-require('dotenv').config()
+// require('dotenv').config()
 
 
 const port = process.env.PORT || 5000;

@@ -6,3 +6,23 @@ h1, h3, h4{
     color: black;
 }
 
+.home {
+    text-align: center;
+}
+
+.intro{
+    text-indent: 40px;
+    line-height: 2;
+    padding-right: 160px;
+    padding-left: 160px;
+    font-weight: bold;
+}
+
+body {
+    background-image: url("http://www.hdnicewallpapers.com/Walls/Big/Thoughts%20and%20Quotes/Superb_Best_Thought_on_Travel_HD_Desktop_Wallpaper.jpg");
+    /* background-size: cover; */
+}
+
+.App-header {
+    background-color:black;
+}

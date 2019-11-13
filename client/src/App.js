@@ -8,6 +8,8 @@ import store from './store';
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
+import Account from "./pages/Account";
+import Feed from "./pages/Feed";
 
 // import logo from "./logo.svg";
 
@@ -45,13 +47,16 @@ class App extends Component {
                         {/* <img src={logo} className="App-logo" alt="logo" /> */}
                         {/* <h2>Welcome to Travel Buddy</h2> */}
                         <Navbar />
+                        <hr></hr>
                         </div>
-                        <Route path="/" component={Home} />
+                        <Route exact path="/home" component={Home} />
                         <Route exact path="/Landing" component={Landing} />
                         <Route exact path="/register" component={Register} />
                         <Route exact path="/login" component={Login} />
-                        <Route path="/search" component={Search} />
-                        <Route path="/profile" component={Profile} />
+                        <Route exact path="/search" component={Search} />
+                        <Route exact path="/profile" component={Profile} />
+                        <Route exact path="/account" component={Account} />
+                        <Route exact path="/feed" component={Feed} />
                         <Switch>
                             <PrivateRoute exact path="/dashboard" component={Dashboard} />
                         </Switch>

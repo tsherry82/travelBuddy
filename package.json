@@ -1,7 +1,7 @@
 {
-  "name": "disneyunitedway-mern",
+  "name": "travelBuddy",
   "version": "1.0.0",
-  "description": "Disney United Way Cast Donation Portal",
+  "description": "travel app",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
@@ -14,32 +14,28 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
-
-    "core-js": "^3.3.6",
-    "express": "^4.16.3",
-    "google-maps-react": "^2.0.2",
-    "if-env": "^1.0.4",
-    "react": "^16.11.0",
-    "react-geocode": "^0.2.1",
-    "react-google-maps": "^9.4.5",
-    "react-google-places-suggest": "^3.8.0",
-    "react-router-dom": "^5.1.2"
-
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.1",
+    "core-js": "^3.3.6",
     "express": "^4.17.1",
     "google-map-react": "^1.1.5",
+    "google-maps-react": "^2.0.2",
+    "if-env": "^1.0.4",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.14",
     "mongoose": "^5.6.4",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "react": "^16.11.0",
+    "react-geocode": "^0.2.1",
+    "react-google-maps": "^9.4.5",
+    "react-google-places-suggest": "^3.8.0",
+    "react-router-dom": "^5.1.2",
     "validator": "^11.1.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
-
   }
 }
