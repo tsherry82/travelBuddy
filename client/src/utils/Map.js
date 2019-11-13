@@ -1,31 +1,17 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Geocode from 'react-geocode';
-
-Geocode.setApiKey(process.env.REACT_APP_GOOGLE_KEY);
-Geocode.setLanguage('en');
-
-Geocode.fromAddress('Austin, TX').then(
-  resp => {
-    const { lat, lng } = resp.results[0].geometry.location;
-    console.log( lat, lng );
-  },
-  error => {
-    console.error(error);
-  }
-)
+import SearchForm from '../../src/components/SearchForm';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       markers: [{
         pos: {
           lat: 27.370066,
           lng: -81.516693,
-
         },
         title: "title"
       },
@@ -33,7 +19,6 @@ class SimpleMap extends Component {
         pos: {
           lat: 30.267153,
           lng: -97.7430608,
-
         },
         title: "title2"
       }]
@@ -49,6 +34,8 @@ class SimpleMap extends Component {
     },
     zoom: 11
   };
+
+
 
   renderMarkers(map, maps) {
     this.state.markers.forEach(markerObj => {
@@ -72,6 +59,8 @@ class SimpleMap extends Component {
           bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_KEY }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
+          onChildMouseEnter={this.onChildMouseEnter}
+          onChildMouseLeave={this.onChildMouseLeave}
           yesIWantToUseGoogleMapApiInternals
           onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
         >

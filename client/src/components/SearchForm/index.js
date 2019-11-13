@@ -1,29 +1,75 @@
 import React from "react";
 import "./style.css";
+import Geocode from 'react-geocode';
+
+Geocode.setApiKey(process.env.REACT_APP_GOOGLE_KEY);
+Geocode.setLanguage('en');
 
 // Using the datalist element we can create autofill suggestions based on the props.zip array
-function SearchForm(props) {
-  return (
+class SearchForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      input : ""
+    }
+  }
+
+  
+
+
+
+  getSearchCoord = (event) => {
+    console.log(event)
+    event.preventDefault();
+    this.setState({input: event.target.value})
+    let searchLocation = event.target.value
+    
+
+    Geocode.fromAddress(searchLocation).then(
+      resp => {
+        const { lat, lng } = resp.results[0].geometry.location;
+        console.log(lat, lng);
+      },
+      error => {
+        console.error(error);
+      }
+      
+    )
+   
+  };
+
+  handleFormSubmit = (event) => {
+    event.preventDefault();
+    console.log(this.state.input);
+
+  }
+
+  render() {
+    
+    return (
     <form className="search">
       <div className="form-group">
         <label htmlFor="zip">Place:</label>
         <input
-          value={props.search}
-          onChange={props.handleInputChange}
+          value={this.props.search}
+          onChange={this.getSearchCoord}
           name="zip"
           list="zips"
           type="text"
           className="form-control"
-          placeholder="Type in a zip to begin"
+          placeholder="Type in a city to begin"
           id="zip"
         />
        
-        <button type="submit" onClick={props.handleFormSubmit} className="btn btn-success">
+        <button type="submit" onClick={this.handleFormSubmit} className="btn btn-success">
           Search
         </button>
       </div>
     </form>
   );
+  }
+  
+  
 }
 
 export default SearchForm;
