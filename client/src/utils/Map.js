@@ -52,13 +52,13 @@ class SimpleMap extends Component {
 
   renderMarkers(map, maps) {
     this.state.markers.forEach(markerObj => {
-      let marker = new maps.Marker({
+     new maps.Marker({
         position: markerObj.pos,
         map,
         title: markerObj.title
       })
     })
-    let marker = new maps.Marker({
+     new maps.Marker({
       position: { lat: 28.370066, lng: -81.516693 },
       map,
       title: "Location"

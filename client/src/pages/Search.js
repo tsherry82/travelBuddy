@@ -18,7 +18,7 @@ class Search extends Component {
               <Col size="md-6">
                 <Jumbotron className="home">
                   <h1>Search</h1>
-                  <h3>Coming soon...</h3>
+                  <h3>Under Construction...</h3>
                 </Jumbotron>
                 <SearchForm />
                 <SimpleMap />
