@@ -1,28 +1,20 @@
 import React, { Component } from "react";
-import Jumbotron from "../components/Jumbotron";
+// import Jumbotron from "../components/Jumbotron";
 // import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
+// import { Col, Row, Container } from "../components/Grid";
+import Profile from "../components/Profile/profile";
 
 
 
 
 
-class Profile extends Component {
+class ProfilePage extends Component {
     render() {
       
         return (
-          <Container fluid>
-            <Row>
-              <Col size="md-6">
-                <Jumbotron className="home">
-                  <h3>Profile</h3>
-                  <h3>Coming soon...</h3>
-                </Jumbotron>
-                </Col>
-        </Row>
-      </Container>
+       <Profile></Profile>
         );
     }
 }
 
-export default Profile;
+export default ProfilePage;

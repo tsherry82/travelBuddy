@@ -16,6 +16,8 @@ router.post('/register', (req, res) => {
 
     const name = req.body.name;
     const email = req.body.email;
+    const age = req.body.age;
+    const city = req.body.city;
     const password = req.body.password;
 
     User.findOne({ email }).then(user => {
@@ -23,6 +25,8 @@ router.post('/register', (req, res) => {
 
         const newUser = new User({
             name,
+            age,
+            city,
             email,
             password
         });
@@ -54,7 +58,10 @@ router.post('/login', (req, res) => {
 
             const payload = {
                 id: user.id,
-                name: user.name
+                name: user.name,
+                age: user.age,
+                city: user.city,
+                email: user.email
             };
 
             jwt.sign(payload, keys.cypher, { expiresIn: 31556926 }, (err, token) => {

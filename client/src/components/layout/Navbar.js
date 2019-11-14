@@ -22,11 +22,8 @@ class Navbar extends Component {
       <Link className="col s5 black-text" style={{ fontFamily: "monospace" }} to="/feed">
         Feed |
       </Link>
-      <Link className="col s5 black-text" style={{ fontFamily: "monospace" }} to="/account">
-        Account |
-      </Link>
       <Link className="col s5 black-text" style={{ fontFamily: "monospace" }} to="/login">
-        Login 
+        Account 
       </Link>
                     </div>
                 </nav>
