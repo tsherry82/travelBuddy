@@ -10,11 +10,13 @@ class SearchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      lat:"",
+      lng:"",
       input : ""
     }
   }
 
-  
+   
 
 
 
@@ -29,6 +31,9 @@ class SearchForm extends React.Component {
       resp => {
         const { lat, lng } = resp.results[0].geometry.location;
         console.log(lat, lng);
+        this.setState({
+          lat, lng
+        })
       },
       error => {
         console.error(error);
@@ -41,6 +46,7 @@ class SearchForm extends React.Component {
   handleFormSubmit = (event) => {
     event.preventDefault();
     console.log(this.state.input);
+    this.props.updateLocation(this.state.lat,this.state.lng)
 
   }
 
