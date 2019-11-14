@@ -2,7 +2,7 @@
     color: black;
 }
 
-h1, h3, h4{
+h1, h3, h4, h5{
     color: black;
 }
 
@@ -26,3 +26,26 @@ body {
 .App-header {
     background-color:black;
 }
+
+#postArea{
+    color: black;
+}
+
+.cool-font{
+    color: black;
+}
+
+#title, 
+#postBox {
+    color: black;
+}
+
+input#title.form-control,
+textarea#postBox.form-control{
+    background-color: white;
+}
+
+.userInfo{
+    color: black;
+}
+

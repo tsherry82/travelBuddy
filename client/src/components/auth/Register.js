@@ -10,6 +10,8 @@ class Register extends Component {
         super();
         this.state = {
             name: "",
+            age:"",
+            city:"",
             email: "",
             password: "",
             password2: "",
@@ -40,6 +42,8 @@ class Register extends Component {
 
         const newUser = {
             name: this.state.name,
+            age: this.state.age,
+            city: this.state.city,
             email: this.state.email,
             password: this.state.password,
             password2: this.state.password2
@@ -56,7 +60,7 @@ class Register extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col s8 offset-s2">
-                        <Link to="/" className="btn-flat waves-effect">
+                        <Link to="/login" className="btn-flat waves-effect">
                             <i className="material-icons left">keyboard_backspace</i> Back to home
                         </Link>
                         <div className="col s12" style={{ paddingLeft: "11.250px" }}>
@@ -72,6 +76,16 @@ class Register extends Component {
                                 <input onChange={this.onChange} value={this.state.name} error={errors.name} name="name" type="text" className={classnames("", { invalid: errors.name })} />
                                 <label htmlFor="name">Name</label>
                                 <span className="red-text">{errors.name}</span>
+                            </div>
+                            <div className="input-field col s12">
+                                <input onChange={this.onChange} value={this.state.age} error={errors.age} name="age" type="text" className={classnames("", { invalid: errors.age })} />
+                                <label htmlFor="age">Age</label>
+                                <span className="red-text">{errors.age}</span>
+                            </div>
+                            <div className="input-field col s12">
+                                <input onChange={this.onChange} value={this.state.city} error={errors.city} name="city" type="text" className={classnames("", { invalid: errors.city })} />
+                                <label htmlFor="city">City</label>
+                                <span className="red-text">{errors.city}</span>
                             </div>
                             <div className="input-field col s12">
                                 <input onChange={this.onChange} value={this.state.email} error={errors.email} name="email" type="email" className={classnames("", { invalid: errors.email })} />

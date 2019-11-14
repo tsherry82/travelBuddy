@@ -8,7 +8,7 @@ import store from './store';
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
-import Account from "./pages/Account";
+// import Account from "./pages/Account";
 import Feed from "./pages/Feed";
 
 // import logo from "./logo.svg";
@@ -55,7 +55,6 @@ class App extends Component {
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/search" component={Search} />
                         <Route exact path="/profile" component={Profile} />
-                        <Route exact path="/account" component={Account} />
                         <Route exact path="/feed" component={Feed} />
                         <Switch>
                             <PrivateRoute exact path="/dashboard" component={Dashboard} />

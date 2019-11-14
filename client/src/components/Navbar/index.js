@@ -15,11 +15,8 @@ function Navbar() {
       <Link className="navbar-brand" to="/profile">
         Profile |
       </Link>
-      <Link className="navbar-brand" to="/account">
-        Account |
-      </Link>
       <Link className="navbar-brand" to="/login">
-        Login 
+       Account
       </Link>
       
       

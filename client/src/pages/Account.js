@@ -3,7 +3,11 @@ import Jumbotron from "../components/Jumbotron";
 // import PropTypes from 'prop-types';
 // import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
+
+// import Dashboard from "../components/dashboard";
+
 import axios from 'axios';
+
 
 class Profile extends Component {
   // constructor(props) {
@@ -29,6 +33,10 @@ class Profile extends Component {
             <Row>
               <Col size="md-6">
                   <h3>Welcome, </h3>
+
+                  {/* <Dashboard></Dashboard> */}
+
+
                   {/* <b>Hey there,</b> {user.name.split(" ")[0]} */}
                 <Jumbotron className="home">
                   <h1>Account Page</h1>
