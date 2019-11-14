@@ -7,6 +7,17 @@ import SimpleMap from "../utils/Map";
 
 
 class Search extends Component {
+  state = {
+    lat: 28.37067,
+    lng: -81.516693
+  }
+
+  updateLocation = (lat, lng) => {
+    console.log('updated local');
+    this.setState({
+      lat, lng
+    })
+  }
 
 
   render() {
@@ -19,8 +30,8 @@ class Search extends Component {
               <h1>Search</h1>
               <h3>Coming soon...</h3>
             </Jumbotron>
-            <SearchForm />
-            <SimpleMap />
+            <SearchForm updateLocation={this.updateLocation} />
+            <SimpleMap lat={this.state.lat}lng={this.state.lng} center={this.state}/>
 
           </Col>
         </Row>
