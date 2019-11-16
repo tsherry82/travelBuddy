@@ -35,7 +35,9 @@ class ProfilePage extends Component {
     render() {
       
         return (
-   <h4>Under Construction...</h4> 
+  <Profile></Profile>
+
+   
         );
     }
 }
