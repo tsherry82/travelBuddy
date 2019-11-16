@@ -42,6 +42,14 @@ router.post('/register', (req, res) => {
     });
 });
 
+router.get('/register', (req, res) => {
+    console.log("get user");
+    res.status(200);
+User.find().then(currentUser => {
+    res.json(currentUser);
+})
+})
+
 router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
 

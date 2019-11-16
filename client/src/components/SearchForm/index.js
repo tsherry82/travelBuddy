@@ -72,6 +72,7 @@ class SearchForm extends React.Component {
   render() {
 
     return (
+
       <form className="search">
         <div className="form-group">
           <label htmlFor="zip">Place:</label>
@@ -88,6 +89,7 @@ class SearchForm extends React.Component {
 
           <button type="submit" onClick={this.handleFormSubmit} className="btn btn-success">
             Search
+
         </button>
         </div>
       </form>

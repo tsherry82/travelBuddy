@@ -9,6 +9,13 @@ export default {
         return axios.get("api/posts");
 
     },
+
+    getUserById: () => {
+        return axios.get("api/user/:id");
+    },
+    saveUserById: () => {
+        return axios.post("api/user/id");
+
     // adding logic to post and get the users searches to the database to be able to track desired loations
 
     saveSearch: (userSearch) => {
@@ -17,5 +24,6 @@ export default {
 
     getSearch: () => {
         return axios.get('api/search')
+
     }
 }

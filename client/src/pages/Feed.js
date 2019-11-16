@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 // import { Link } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
+import { Col, Row, Container } from "../components/Grid/index";
 import Feed from "../components/Feed/feed";
 import Post from "../components/Post/post";
 import API from "../utils/API";
@@ -64,7 +64,6 @@ class FeedPage extends Component {
               <Col size="md-6">
                 <Jumbotron className="home">
                   <h1>Feed</h1>
-                  <h3>Under Construction</h3>
                 </Jumbotron>
                 </Col>
               <Post onChange = {this.onChange} 
@@ -72,7 +71,7 @@ class FeedPage extends Component {
               post = {this.state.post}
               onSubmit = {this.onSubmit}
               ></Post>
-              {this.state.feed.length ? (this.state.feed.map(postData => <Feed
+              {this.state.feed.length ? (this.state.feed.map(postData => <Feed id="postdata"
               title = {postData.title}
               post = {postData.post}
               author = {postData.author}

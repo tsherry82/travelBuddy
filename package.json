@@ -10,7 +10,7 @@
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "Richard G. Scates",
+  "author": "Tim Sherry & Blake Bovaird",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",

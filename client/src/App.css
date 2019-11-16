@@ -41,11 +41,37 @@ body {
 }
 
 input#title.form-control,
-textarea#postBox.form-control{
+textarea#postBox.form-control,
+input#zip.form-control{
     background-color: white;
 }
 
-.userInfo{
+/* .userInfo{
+    color: black;
+} */
+
+.postData
+ {
+    color:black;
+}
+
+#userInformation {
+    /* float: left; */
     color: black;
 }
 
+label#place.active {
+    color:black;
+}
+
+h5.welcome {
+    text-align: center;
+}
+
+p#introPara {
+    padding: 40px;
+}
+
+h4.fernweh {
+    color: white;
+}

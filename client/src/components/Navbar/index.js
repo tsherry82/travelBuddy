@@ -11,6 +11,8 @@ function Navbar() {
       </Link>
       <Link className="navbar-brand" to="/search">
       Search |
+      </Link><Link className="navbar-brand" to="/connect">
+       Connect |
       </Link>
       <Link className="navbar-brand" to="/profile">
         Profile |
