@@ -10,11 +10,14 @@ class Navbar extends Component {
                         <Link to="/" className="col s5 brand-logo center black-text" style={{ fontFamily: "monospace" }}>
                             <i className="material-icons">code</i> TravelBuddy
                         </Link>
-                        <Link className="col s5 black-text" style={{ fontFamily: "monospace" }} to="/home">
+                        <Link className="col s5 black-text" style={{ fontFamily: "monospace" }} to="/">
         |Home |
       </Link>
       <Link className="col s5 black-text" style={{ fontFamily: "monospace" }} to="/search">
        Search |
+      </Link>
+      <Link className="col s5 black-text" style={{ fontFamily: "monospace" }} to="/connect">
+       Connect |
       </Link>
       <Link className="col s5 black-text" style={{ fontFamily: "monospace" }} to="/profile">
         Profile |

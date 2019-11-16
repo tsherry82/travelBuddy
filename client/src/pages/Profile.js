@@ -3,16 +3,39 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../components/Grid";
 import Profile from "../components/Profile/profile";
+import API from "../utils/API";
+
 
 
 
 
 
 class ProfilePage extends Component {
+    // constructor() {
+    //     super();
+    //     this.state = {
+    //         user: "",
+    //         email: "",
+    //         age: "",
+    //         city: ""
+    //     };
+    //   }
+
+      // componentDidMount(){
+      //   this.getUser();
+    
+      // }
+      // getUser = () => {
+      //   API.getUserById()
+      //   .then(res => {
+      //     this.setState({feed: res.data});
+      //     console.log(res);
+      //   }) 
+      // }
     render() {
       
         return (
-       <Profile></Profile>
+   <h4>Under Construction...</h4> 
         );
     }
 }

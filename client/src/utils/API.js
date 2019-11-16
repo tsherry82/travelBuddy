@@ -8,5 +8,11 @@ export default {
     getPosts: () => {
         return axios.get("api/posts");
 
+    },
+    getUserById: () => {
+        return axios.get("api/user/:id");
+    },
+    saveUserById: () => {
+        return axios.post("api/user/id");
     }
 }

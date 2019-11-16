@@ -55,7 +55,7 @@ class SearchForm extends React.Component {
     return (
     <form className="search">
       <div className="form-group">
-        <label htmlFor="zip">Place:</label>
+        <label htmlFor="zip" id="place"><h5>Destination:</h5></label>
         <input
           value={this.props.search}
           onChange={this.getSearchCoord}

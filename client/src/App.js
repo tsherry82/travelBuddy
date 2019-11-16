@@ -13,7 +13,6 @@ import Feed from "./pages/Feed";
 
 // import logo from "./logo.svg";
 
-
 import './App.css';
 
 import Navbar from './components/layout/Navbar';
@@ -49,15 +48,16 @@ class App extends Component {
                         <Navbar />
                         <hr></hr>
                         </div>
-                        <Route exact path="/home" component={Home} />
+                        <Route exact path="/" component={Home} />
                         <Route exact path="/Landing" component={Landing} />
                         <Route exact path="/register" component={Register} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path="/search" component={Search} />
-                        <Route exact path="/profile" component={Profile} />
-                        <Route exact path="/feed" component={Feed} />
-                        <Switch>
-                            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                        <Switch>      
+                        <PrivateRoute exact path="/connect" component={Profile} />    
+                        <PrivateRoute exact path="/search" component={Search} />               
+                        <PrivateRoute exact path="/profile" component={Profile} />
+                         <PrivateRoute exact path="/feed" component={Feed} />
+                        <PrivateRoute exact path="/dashboard" component={Dashboard} />
                         </Switch>
                     </div>
                 </Router>
