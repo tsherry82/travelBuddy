@@ -11,10 +11,21 @@ import React, { Component } from "react";
 
 
 class Profile extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searches : []
+        }
+      }
+
     render() {
       
         return (
             <div>
+
+                <h1> Austin, TX</h1>
+                <h1> Boston, MA</h1>
+                <h1> Tampa, FL</h1>
                <h4>Profile Page under construction...</h4> 
       {/* <Account></Account> */}
         </div>
