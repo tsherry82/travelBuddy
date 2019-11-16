@@ -5,6 +5,7 @@ const passport = require('passport');
 
 const users = require('./routes/api/users');
 const posts = require('./routes/api/posts');
+const search = require('./routes/api/Search');
 
 const app = express();
 
@@ -25,6 +26,7 @@ require('./config/passport')(passport);
 
 app.use('/api/users', users);
 app.use('/api', posts);
+app.use('/api', search);
 
 app.listen(port, () => {
     console.log(`Server is listening at http://localhost:${port}`);
