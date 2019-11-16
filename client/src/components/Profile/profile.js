@@ -22,19 +22,28 @@ if(localStorage.jwtToken){
     }
 }
 
-export default function Profile (props) {
-    return (
-        <div className="user-body">
-            <div className="row">
-                <div className="col-sm-8 col-sm-offset-2">
-                    <hr></hr>
-                   
-                    <div className="userData">{props.user}</div>
-                  
-                
-                </div>
-            </div>    
-    </div>
+class Profile extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            searches : []
+        }
+      }
+
+    render() {
+      
+        return (
+            <div>
+
+                <h1> Austin, TX</h1>
+                <h1> Boston, MA</h1>
+                <h1> Tampa, FL</h1>
+               <h4>Profile Page under construction...</h4> 
+      {/* <Account></Account> */}
+        </div>
+    
+        );
+
         
     );
 }

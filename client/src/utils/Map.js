@@ -2,24 +2,11 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 // import SearchForm from '../../src/components/SearchForm';
 
-// i need to grab the getSearchCoord function to gran the lat and lng to update the map with the users search coord, I also need to figure out where to get the google places info so that our map actually has content, i would also like to adda function so when i click on a location it would add it to my interest to my prolfile, therefor other users can find my desire locations and then comment on specific locations.
-
-
-
-
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 class SimpleMap extends Component {
   constructor(props) {
     super(props);
-
-    // this.getSearchCoord = this.getSearchCoord.bind(this);
-
-    // this.getSearchCoord() {
-    //  this.setState({
-       
-    //  });
-    // }
     this.state = {
       markers: [{
         pos: {

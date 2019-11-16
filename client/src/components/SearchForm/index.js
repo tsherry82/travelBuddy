@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import Geocode from 'react-geocode';
+import API from "../../utils/API";
 
 Geocode.setApiKey(process.env.REACT_APP_GOOGLE_KEY);
 Geocode.setLanguage('en');
@@ -10,22 +11,18 @@ class SearchForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      lat:"",
-      lng:"",
-      input : ""
+      lat: "",
+      lng: "",
+      input: ""
     }
   }
 
-   
+  getSearchCoord = (e) => {
+    console.log(e)
+    e.preventDefault();
+    this.setState({ input: e.target.value })
+    let searchLocation = e.target.value
 
-
-
-  getSearchCoord = (event) => {
-    console.log(event)
-    event.preventDefault();
-    this.setState({input: event.target.value})
-    let searchLocation = event.target.value
-    
 
     Geocode.fromAddress(searchLocation).then(
       resp => {
@@ -38,44 +35,68 @@ class SearchForm extends React.Component {
       error => {
         console.error(error);
       }
-      
+
     )
-   
-  };
+
+  }
+
+  // componentDidMount() {
+  //   this.getSearchCoord();
+
+  // };
+
+
+  // getSearch = () => {
+  //   API.getSearch()
+  //     .then(res => {
+  //       this.input.setState({ search: res.data });
+  //       console.log(res);
+  //     })
+  // }
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state.input);
-    this.props.updateLocation(this.state.lat,this.state.lng)
+    console.log("Search: " + this.state.input);
+    this.props.updateLocation(this.state.lat, this.state.lng)
+    API.saveSearch({ search: this.state.input })
+      .then(res => {
+        this.setState({
+          input: ""
+        })
+      });
 
   }
+
+
 
   render() {
-    
+
     return (
-    <form className="search">
-      <div className="form-group">
-        <label htmlFor="zip" id="place"><h5>Destination:</h5></label>
-        <input
-          value={this.props.search}
-          onChange={this.getSearchCoord}
-          name="zip"
-          list="zips"
-          type="text"
-          className="form-control"
-          placeholder="Type in a city to begin"
-          id="zip"
-        />
-       
-        <button type="submit" onClick={this.handleFormSubmit} className="btn btn-success">
-          Search
+
+      <form className="search">
+        <div className="form-group">
+          <label htmlFor="zip">Place:</label>
+          <input
+            value={this.props.search}
+            onChange={this.getSearchCoord}
+            name="zip"
+            list="zips"
+            type="text"
+            className="form-control"
+            placeholder="Type in a city to begin"
+            id="zip"
+          />
+
+          <button type="submit" onClick={this.handleFormSubmit} className="btn btn-success">
+            Search
+
         </button>
-      </div>
-    </form>
-  );
+        </div>
+      </form>
+    );
   }
-  
-  
+
+
 }
 
 export default SearchForm;
