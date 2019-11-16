@@ -17,7 +17,7 @@ export default {
         return axios.post("api/user/id");
 
     // adding logic to post and get the users searches to the database to be able to track desired loations
-
+    },
     saveSearch: (userSearch) => {
         return axios.post('api/search', userSearch);
     },

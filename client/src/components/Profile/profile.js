@@ -34,19 +34,19 @@ class Profile extends Component {
       
         return (
             <div>
-
-                <h1> Austin, TX</h1>
-                <h1> Boston, MA</h1>
-                <h1> Tampa, FL</h1>
-               <h4>Profile Page under construction...</h4> 
-      {/* <Account></Account> */}
+                <h5>Tim's Saved Searches</h5>
+                <hr></hr>
+                <h6> Austin, TX</h6>
+                <h6> Boston, MA</h6>
+                <h6> Tampa, FL</h6>
+               {/* <h5>Profile Page under construction...</h5>  */}
+ 
         </div>
     
-        );
-
         
+
+    
     );
 }
-
-
-
+}
+export default Profile;
